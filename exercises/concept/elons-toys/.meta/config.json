@@ -4,7 +4,8 @@
     "tehsphinx"
   ],
   "contributors": [
-    "oanaOM"
+    "oanaOM",
+    "mcastorina"
   ],
   "forked_from": [
     "csharp/elons-toys"
@@ -12,6 +13,9 @@
   "files": {
     "solution": [
       "elons_toys.go"
+    ],
+    "editor": [
+      "car.go"
     ],
     "test": [
       "elons_toys_test.go"

@@ -6,7 +6,7 @@
 //	right *SearchTreeData
 // }
 //
-// func Bst(int) *SearchTreeData
+// func NewBst(int) *SearchTreeData
 // func (*SearchTreeData) Insert(int)
 // func (*SearchTreeData) MapString(func(int) string) []string
 // func (*SearchTreeData) MapInt(func(int) int) []int
@@ -20,10 +20,10 @@ import (
 )
 
 func TestDataIsRetained(t *testing.T) {
-	actual := Bst(4).data
+	actual := NewBst(4).data
 	expected := 4
 	if actual != expected {
-		t.Errorf("Bst(4).data: %d, want %d.", actual, expected)
+		t.Errorf("NewBst(4).data: %d, want %d.", actual, expected)
 	}
 }
 
@@ -221,6 +221,6 @@ func TestMapIntWithComplexStructure(t *testing.T) {
 	actual := bst.MapInt(f)
 	expected := []int{1, 2, 3, 4, 5, 6, 7}
 	if !reflect.DeepEqual(actual, expected) {
-		t.Errorf("bst.MapString(): %v, want %v.", actual, expected)
+		t.Errorf("bst.MapInt(): %v, want %v.", actual, expected)
 	}
 }

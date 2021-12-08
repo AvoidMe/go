@@ -94,6 +94,21 @@ func TestDrive(t *testing.T) {
 			},
 		},
 		{
+			name: "Drive when battery percentage is below battery drain",
+			car: Car{
+				speed:        5,
+				batteryDrain: 7,
+				battery:      3,
+				distance:     0,
+			},
+			expected: Car{
+				speed:        5,
+				batteryDrain: 7,
+				battery:      3,
+				distance:     0,
+			},
+		},
+		{
 			name: "Drive the car with battery drained.",
 			car: Car{
 				speed:        5,
@@ -142,7 +157,7 @@ func TestCanFinish(t *testing.T) {
 			expected: true,
 		},
 		{
-			name: "Car can finish the track distance just before battery drained.",
+			name: "Car can finish the track distance just as the battery is drained.",
 			car: Car{
 				speed:        5,
 				batteryDrain: 5,
@@ -150,7 +165,7 @@ func TestCanFinish(t *testing.T) {
 				distance:     20,
 			},
 			track: Track{
-				distance: 20,
+				distance: 100,
 			},
 			expected: true,
 		},
@@ -167,6 +182,32 @@ func TestCanFinish(t *testing.T) {
 			},
 			expected: false,
 		},
+		{
+			name: "Car can finish the track distance with initial battery less than 100%",
+			car: Car{
+				speed:        2,
+				batteryDrain: 3,
+				battery:      25,
+				distance:     0,
+			},
+			track: Track{
+				distance: 16,
+			},
+			expected: true,
+		},
+		{
+			name: "Car cannot finish the track distance with initial battery less than 100%",
+			car: Car{
+				speed:        2,
+				batteryDrain: 3,
+				battery:      25,
+				distance:     0,
+			},
+			track: Track{
+				distance: 24,
+			},
+			expected: false,
+		},
 	}
 
 	for _, tt := range tests {
@@ -174,7 +215,7 @@ func TestCanFinish(t *testing.T) {
 			got := CanFinish(tt.car, tt.track)
 
 			if got != tt.expected {
-				t.Errorf("CanFinish(%v, %v) = %v; expected %v", tt.car, tt.track, got, tt.expected)
+				t.Errorf("CanFinish(%#v, %#v) = %v; expected %v", tt.car, tt.track, got, tt.expected)
 			}
 		})
 	}

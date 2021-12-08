@@ -43,7 +43,9 @@ module $stub
 go 1.15
 EOD
       exit 1
-    elif [ -f "${dir}${stub}.go" ] ; then
+    fi
+
+    if [ -f "${dir}${stub}.go" ] ; then
       tmpstub=$tmp/$parentdir/$stub
       mkdir -p $tmpstub
       echo "copy base files and tests to $tmpstub"
@@ -53,8 +55,13 @@ EOD
       echo "copy module $mod to $tmpstub"
       cp $mod $tmpstub
       echo "put everything in the same module"
+      original_module=`head -n1 $tmpstub/go.mod | awk '{ print $2 }'`
       sed -i'.bak' "s|package .*|package ${stub}|" $tmpstub/*.go
+      sed -i'.bak' "s|// Package ${original_module}|// Package ${stub}|" $tmpstub/*.go
       sed -i'.bak' "s|module .*|module ${stub}|" $tmpstub/go.mod
+    else
+      echo "${dir}${stub}.go not found: expected a file ${dir}${stub}.go since the exercise is in a folder named $stub"
+      exit 1
     fi
   done
 done
@@ -69,6 +76,13 @@ cleanup () {
 }
 
 trap cleanup EXIT INT TERM
+
+# Since Go 1.16 all go commands run in module-aware mode,
+# which would require a go.mod file to be present at the root
+# of the project.
+# Setting GO111MODULE to 'auto' makes the go commands run in
+# module-aware mode only in places where a go.mod is present.
+export GO111MODULE=auto
 
 # This is the last command in the file,
 # so the exit status of this script is the exit status of go test.

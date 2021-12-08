@@ -131,12 +131,26 @@
         "uuid": "7ab1692d-b7e8-4f11-9bbd-2b855501e5ce",
         "concepts": [
           "arithmetic-operators",
-          "numbers",
-          "conditionals-if",
-          "comparison"
+          "numbers"
         ],
         "prerequisites": [
           "basics"
+        ],
+        "status": "beta"
+      },
+      {
+        "slug": "vehicle-purchase",
+        "name": "Vehicle Purchase",
+        "uuid": "7e2e4088-2038-4a78-895f-0536550fe671",
+        "concepts": [
+          "comparison",
+          "conditionals-if"
+        ],
+        "prerequisites": [
+          "strings",
+          "arithmetic-operators",
+          "booleans",
+          "numbers"
         ],
         "status": "beta"
       },
@@ -196,7 +210,8 @@
           "structs",
           "string-formatting",
           "type-definitions",
-          "pointers"
+          "pointers",
+          "functions"
         ],
         "status": "beta"
       },
@@ -212,6 +227,20 @@
           "multiple-return-values"
         ],
         "status": "wip"
+      },
+      {
+        "slug": "bird-watcher",
+        "name": "Bird Watcher",
+        "uuid": "bdb493de-b07d-4669-9890-5bebeddbf1e8",
+        "concepts": [ 
+          "for-loops"
+        ],
+        "prerequisites": [
+          "numbers", 
+          "conditionals-if", 
+          "slices"
+        ],
+        "status": "beta"
       },
       {
         "name": "Card Tricks",
@@ -327,7 +356,20 @@
           "slices",
           "maps",
           "arithmetic-operators",
-          "string-formatting",
+          "string-formatting"
+        ],
+        "status": "beta"
+      },
+      {
+        "slug": "interest-is-interesting",
+        "name": "Interest is Interesting",
+        "uuid": "8e373428-e988-4672-953d-d0794e9a3a16",
+        "concepts": [
+          "floating-point-numbers"
+        ],
+        "prerequisites": [
+          "numbers",
+          "conditionals-if",
           "packages"
         ],
         "status": "beta"
@@ -491,7 +533,7 @@
         "uuid": "86b8f1e6-e088-403e-984a-abd360f5dcef",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 3,
+        "difficulty": 4,
         "topics": [
           "randomness"
         ]
@@ -652,7 +694,8 @@
         "difficulty": 1,
         "topics": [
           "lists"
-        ]
+        ],
+        "status": "deprecated"
       },
       {
         "slug": "roman-numerals",
@@ -1703,7 +1746,7 @@
         "uuid": "bf2dcbc4-266f-4cad-9cd7-76d446360a5d",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 0,
+        "difficulty": 1,
         "topics": null,
         "status": "deprecated"
       },
@@ -1713,7 +1756,7 @@
         "uuid": "9a06556b-a661-4329-97a1-b5d0f0c7590c",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 0,
+        "difficulty": 1,
         "topics": null,
         "status": "deprecated"
       },
@@ -1723,7 +1766,7 @@
         "uuid": "0c9cef3d-57f6-479a-aca4-25f310426d6a",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 0,
+        "difficulty": 1,
         "topics": null,
         "status": "deprecated"
       },
@@ -1733,7 +1776,7 @@
         "uuid": "4840c889-ebe5-4082-98c0-b9ed8618f6eb",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 0,
+        "difficulty": 1,
         "topics": null,
         "status": "deprecated"
       },
@@ -1743,7 +1786,7 @@
         "uuid": "52af9f03-8b6b-4d75-a363-124f3269dccd",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 0,
+        "difficulty": 1,
         "topics": null,
         "status": "deprecated"
       },
@@ -1889,6 +1932,16 @@
       "uuid": "e737f47b-5d1a-423a-8d6a-cd201a6e4e44"
     },
     {
+      "name": "Floating-point numbers",
+      "slug": "floating-point-numbers",
+      "uuid": "542b0434-59fd-4976-9d5b-c3c5c07e78d7"
+    },
+    {
+      "name": "For Loops",
+      "slug": "for-loops",
+      "uuid": "9cf34401-7993-4b09-8a5e-55347acda4ca"
+    },
+    {
       "name": "Iteration",
       "slug": "iteration",
       "uuid": "e18ca160-bbb8-4cd0-882a-0e67f1e60b47"
@@ -1987,6 +2040,16 @@
       "name": "Pointers",
       "slug": "pointers",
       "uuid": "57477550-cecf-4334-903a-85a6c32d61d0"
+    },
+    {
+      "name": "Error Handling",
+      "slug": "error-handling",
+      "uuid": "a118d8e5-d9ed-4612-a0a4-97bcbfa9ab4c"
+    },
+    {
+      "name": "Variables",
+      "slug": "variables",
+      "uuid": "76e36f06-f809-4ce7-9ebd-4b1e010bc938"
     }
   ],
   "key_features": [

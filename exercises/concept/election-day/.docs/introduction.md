@@ -27,7 +27,7 @@ Similarly, when we need to change the value in the piece of memory of `a`, we ca
 a = 3
 ```
 
-The piece of memory that is associated with `a` will now will now be storing the value `3`.
+The piece of memory that is associated with `a` will now be storing the value `3`.
 
 ## Pointers
 
@@ -37,7 +37,7 @@ While variables allow us to refer to values in memory, sometimes it's useful to 
 var p *int // 'p' contains the memory address of an integer
 ```
 
-Here we declaring a variable `p` of type "pointer to int" (`*int`). This means that `p` will hold the memory address of an integer. The zero value of pointers is `nil` because a `nil` pointer holds no memory address.
+Here we declare a variable `p` of type "pointer to int" (`*int`). This means that `p` will hold the memory address of an integer. The zero value of pointers is `nil` because a `nil` pointer holds no memory address.
 
 ### Getting a pointer to a variable
 
@@ -69,7 +69,7 @@ b = *p // b == 2
 
 The operation `*p` fetches the value stored at the memory address stored in `p`. This operation is often called "dereferencing".
 
-We can also use the derefering operator to assign a new value to the memory address referenced by the pointer:
+We can also use the dereference operator to assign a new value to the memory address referenced by the pointer:
 
 ```go
 var a int
